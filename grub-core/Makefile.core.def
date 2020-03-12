@@ -1123,6 +1123,77 @@ module = {
 };
 
 module = {
+  name = mrsh;
+  common = script/mrsh/main.c;
+  common = script/mrsh/arithm.c;
+  common = script/mrsh/array.c;
+  common = script/mrsh/ast.c;
+  common = script/mrsh/ast_print.c;
+  common = script/mrsh/buffer.c;
+  common = script/mrsh/getopt.c;
+  common = script/mrsh/hashtable.c;
+
+  common = script/mrsh/frontend/basic.c;
+
+  common = script/mrsh/parser/arithm.c;
+  common = script/mrsh/parser/parser.c;
+  common = script/mrsh/parser/program.c;
+  common = script/mrsh/parser/word.c;
+
+  common = script/mrsh/shell/arithm.c;
+  common = script/mrsh/shell/entry.c;
+  common = script/mrsh/shell/job.c;
+  common = script/mrsh/shell/path.c;
+  common = script/mrsh/shell/process.c;
+  common = script/mrsh/shell/redir.c;
+  common = script/mrsh/shell/shell.c;
+  common = script/mrsh/shell/trap.c;
+  common = script/mrsh/shell/word.c;
+  common = script/mrsh/shell/task/pipeline.c;
+  common = script/mrsh/shell/task/simple_command.c;
+  common = script/mrsh/shell/task/task.c;
+  common = script/mrsh/shell/task/word.c;
+
+  common = script/mrsh/builtin/alias.c;
+  common = script/mrsh/builtin/bg.c;
+  common = script/mrsh/builtin/break.c;
+  common = script/mrsh/builtin/builtin.c;
+  common = script/mrsh/builtin/cd.c;
+  common = script/mrsh/builtin/colon.c;
+  common = script/mrsh/builtin/command.c;
+  common = script/mrsh/builtin/dot.c;
+  common = script/mrsh/builtin/eval.c;
+  common = script/mrsh/builtin/exec.c;
+  common = script/mrsh/builtin/exit.c;
+  common = script/mrsh/builtin/export.c;
+  common = script/mrsh/builtin/false.c;
+  common = script/mrsh/builtin/fg.c;
+  common = script/mrsh/builtin/getopts.c;
+  common = script/mrsh/builtin/hash.c;
+  common = script/mrsh/builtin/jobs.c;
+  common = script/mrsh/builtin/pwd.c;
+  common = script/mrsh/builtin/read.c;
+  common = script/mrsh/builtin/return.c;
+  common = script/mrsh/builtin/set.c;
+  common = script/mrsh/builtin/shift.c;
+  common = script/mrsh/builtin/times.c;
+  common = script/mrsh/builtin/trap.c;
+  common = script/mrsh/builtin/true.c;
+  common = script/mrsh/builtin/type.c;
+  common = script/mrsh/builtin/ulimit.c;
+  common = script/mrsh/builtin/umask.c;
+  common = script/mrsh/builtin/unalias.c;
+  common = script/mrsh/builtin/unset.c;
+  common = script/mrsh/builtin/unspecified.c;
+  common = script/mrsh/builtin/wait.c;
+
+  common = script/mrsh/example/highlight.c;
+
+  cflags = '$(CFLAGS_POSIX) -Werror -Wundef -Wlogical-op -Wmissing-include-dirs -Wold-style-definition -Wpointer-arith -Winit-self -Wfloat-equal -Wstrict-prototypes -Wredundant-decls -Wimplicit-fallthrough=2 -Wendif-labels -Wstrict-aliasing=2 -Woverflow -Wformat=2 -Wno-missing-braces -Wno-missing-field-initializers -Wno-unused-parameter -Wno-unused-result';
+  cppflags = '$(CPPFLAGS_POSIX) -I$(srcdir)/script/mrsh/include';
+};
+
+module = {
   name = memrw;
   common = commands/memrw.c;
 };
