@@ -1124,6 +1124,8 @@ module = {
 
 module = {
   name = mrsh;
+  common = script/mrsh_wrap/posix.c;
+
   common = script/mrsh/main.c;
   common = script/mrsh/arithm.c;
   common = script/mrsh/array.c;
@@ -1189,8 +1191,8 @@ module = {
 
   common = script/mrsh/example/highlight.c;
 
-  cflags = '$(CFLAGS_POSIX) -Werror -Wundef -Wlogical-op -Wmissing-include-dirs -Wold-style-definition -Wpointer-arith -Winit-self -Wfloat-equal -Wstrict-prototypes -Wredundant-decls -Wimplicit-fallthrough=2 -Wendif-labels -Wstrict-aliasing=2 -Woverflow -Wformat=2 -Wno-missing-braces -Wno-missing-field-initializers -Wno-unused-parameter -Wno-unused-result';
-  cppflags = '$(CPPFLAGS_POSIX) -I$(srcdir)/script/mrsh/include';
+  cflags = '$(CFLAGS_POSIX) -std=c99 -Wno-vla -Wno-implicit-fallthrough -Wno-return-type -Wno-unused-parameter -Wno-incompatible-pointer-types -Wno-shadow -Wno-discarded-qualifiers';
+  cppflags = '-I$(srcdir)/script/mrsh/include -I$(srcdir)/script/mrsh_wrap';
 };
 
 module = {
