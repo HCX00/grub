@@ -20,15 +20,17 @@
 #ifndef WIMBOOT_PRIVATE_DATA_H
 #define WIMBOOT_PRIVATE_DATA_H
 
+#ifdef GRUB_MACHINE_EFI
 #include <grub/efi/api.h>
 #include <grub/efi/efi.h>
+#include <efiapi.h>
+#include <private.h>
+#endif
+
 #include <grub/misc.h>
 #include <grub/disk.h>
 #include <grub/file.h>
-
 #include <maplib.h>
-#include <efiapi.h>
-#include <private.h>
 #include <stdint.h>
 #include <stddef.h>
 #include <stdlib.h>
@@ -41,11 +43,11 @@
 
 struct wimboot_cmdline
 {
-  grub_efi_boolean_t gui;
-  grub_efi_boolean_t rawbcd;
-  grub_efi_boolean_t rawwim;
-  unsigned int index;
-  grub_efi_boolean_t pause;
+  grub_uint8_t gui;
+  grub_uint8_t rawbcd;
+  grub_uint8_t rawwim;
+  grub_uint32_t index;
+  grub_uint8_t pause;
   wchar_t inject[256];
 };
 

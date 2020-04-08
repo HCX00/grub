@@ -18,8 +18,6 @@
  */
 
 #include <grub/dl.h>
-#include <grub/efi/api.h>
-#include <grub/efi/efi.h>
 #include <grub/device.h>
 #include <grub/err.h>
 #include <grub/env.h>
@@ -29,9 +27,6 @@
 #include <grub/types.h>
 #include <grub/term.h>
 
-#include <maplib.h>
-#include <private.h>
-#include <efiapi.h>
 #include <wimboot.h>
 #include <vfat.h>
 

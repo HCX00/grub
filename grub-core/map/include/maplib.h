@@ -25,14 +25,13 @@
 #include <grub/term.h>
 #include <grub/types.h>
 #include <grub/gpt_partition.h>
-#include <grub/efi/api.h>
 
 #include <stdint.h>
 
 wchar_t *wstrstr
 (const wchar_t *str, const wchar_t *search_str);
 
-grub_efi_boolean_t
+grub_uint8_t
 guidcmp (const grub_packed_guid_t *g1, const grub_packed_guid_t *g2);
 grub_packed_guid_t *
 guidcpy (grub_packed_guid_t *dst, const grub_packed_guid_t *src);

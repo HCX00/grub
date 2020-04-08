@@ -18,8 +18,7 @@
  */
 
 #include <grub/term.h>
-#include <grub/efi/api.h>
-#include <grub/efi/efi.h>
+#include <grub/types.h>
 
 #include <maplib.h>
 
@@ -48,25 +47,25 @@ wchar_t *wstrstr
   return NULL;
 }
 
-grub_efi_boolean_t
+grub_uint8_t
 guidcmp (const grub_packed_guid_t *g1, const grub_packed_guid_t *g2)
 {
-  grub_efi_uint64_t g1_low, g2_low;
-  grub_efi_uint64_t g1_high, g2_high;
-  g1_low = grub_get_unaligned64 ((const grub_efi_uint64_t *)g1);
-  g2_low = grub_get_unaligned64 ((const grub_efi_uint64_t *)g2);
-  g1_high = grub_get_unaligned64 ((const grub_efi_uint64_t *)g1 + 1);
-  g2_high = grub_get_unaligned64 ((const grub_efi_uint64_t *)g2 + 1);
-  return (grub_efi_boolean_t) (g1_low == g2_low && g1_high == g2_high);
+  grub_uint64_t g1_low, g2_low;
+  grub_uint64_t g1_high, g2_high;
+  g1_low = grub_get_unaligned64 ((const grub_uint64_t *)g1);
+  g2_low = grub_get_unaligned64 ((const grub_uint64_t *)g2);
+  g1_high = grub_get_unaligned64 ((const grub_uint64_t *)g1 + 1);
+  g2_high = grub_get_unaligned64 ((const grub_uint64_t *)g2 + 1);
+  return (grub_uint8_t) (g1_low == g2_low && g1_high == g2_high);
 }
 
 grub_packed_guid_t *
 guidcpy (grub_packed_guid_t *dst, const grub_packed_guid_t *src)
 {
-  grub_set_unaligned64 ((grub_efi_uint64_t *)dst,
-                        grub_get_unaligned64 ((const grub_efi_uint64_t *)src));
-  grub_set_unaligned64 ((grub_efi_uint64_t *)dst + 1,
-                        grub_get_unaligned64 ((const grub_efi_uint64_t*)src + 1));
+  grub_set_unaligned64 ((grub_uint64_t *)dst,
+                        grub_get_unaligned64 ((const grub_uint64_t *)src));
+  grub_set_unaligned64 ((grub_uint64_t *)dst + 1,
+                        grub_get_unaligned64 ((const grub_uint64_t*)src + 1));
   return dst;
 }
 

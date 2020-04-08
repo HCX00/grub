@@ -2810,12 +2810,12 @@ module = {
 
 module = {
   name = map;
-  common = map/map.c;
+  efi = map/efimap.c;
   common = map/lib/maplib.c;
-  common = map/lib/vblock.c;
-  common = map/lib/vdisk.c;
-  common = map/lib/vpart.c;
-  common = map/lib/vboot.c;
+  efi = map/lib/efi/vblock.c;
+  efi = map/lib/efi/vdisk.c;
+  efi = map/lib/efi/vpart.c;
+  efi = map/lib/efi/vboot.c;
   common = map/lib/vfat.c;
 
   cflags = '-Wno-strict-aliasing -fshort-wchar';
@@ -2832,11 +2832,11 @@ module = {
   common = map/wim/wim.c;
   common = map/wim/wimfile.c;
   common = map/wim/wimpatch.c;
-  common = map/wimboot/efimain.c;
-  common = map/wimboot/efiboot.c;
-  common = map/wimboot/efifile.c;
-  common = map/wimboot/efiinstall.c;
-  common = map/wimboot/efivfat.c;
+  efi = map/wimboot/efimain.c;
+  efi = map/wimboot/efiboot.c;
+  efi = map/wimboot/efifile.c;
+  efi = map/wimboot/efiinstall.c;
+  common = map/wimboot/vfat.c;
 
   cflags = '-Wno-strict-aliasing -Wno-vla -fshort-wchar';
   cppflags = '-I$(srcdir)/map/include -I$(srcdir)/map/posix -I$(srcdir)/map/wim';
