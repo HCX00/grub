@@ -97,7 +97,7 @@ grub_cmd_ntboot (grub_extcmd_context_t ctxt,
     grub_error (GRUB_ERR_FILE_READ_ERROR, N_("failed to open bootmgfw.efi"));
     goto fail;
   }
-  add_file ("bootmgfw.efi", bootmgr, bootmgr->size, efi_read_file);
+  add_file ("bootmgfw.efi", bootmgr, bootmgr->size, disk_read_file);
 
   if (state[NTBOOT_WIN].set)
   {
@@ -176,7 +176,7 @@ grub_cmd_ntboot (grub_extcmd_context_t ctxt,
       grub_error (GRUB_ERR_FILE_READ_ERROR, N_("failed to open boot.sdi"));
       goto fail;
     }
-    add_file ("boot.sdi", bootsdi, bootsdi->size, efi_read_file);
+    add_file ("boot.sdi", bootsdi, bootsdi->size, disk_read_file);
   }
 
   bcd_patch (type, filename, file->device->disk->name,

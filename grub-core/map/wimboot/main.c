@@ -18,8 +18,6 @@
  */
 
 #include <grub/dl.h>
-#include <grub/efi/api.h>
-#include <grub/efi/efi.h>
 #include <grub/device.h>
 #include <grub/err.h>
 #include <grub/extcmd.h>
@@ -31,8 +29,6 @@
 #include <grub/term.h>
 
 #include <maplib.h>
-#include <private.h>
-#include <efiapi.h>
 #include <wimboot.h>
 #include <vfat.h>
 #include <string.h>
@@ -165,7 +161,7 @@ grub_cmd_vfat (grub_extcmd_context_t ctxt, int argc, char *argv[])
     else
     {
       append_vfat_list (file, file_name, NULL, 0);
-      add_file (file_name, file, file->size, efi_read_file);
+      add_file (file_name, file, file->size, disk_read_file);
     }
   }
   else if (state[OPS_INSTALL].set)

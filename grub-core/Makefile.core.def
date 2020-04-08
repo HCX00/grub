@@ -2832,11 +2832,12 @@ module = {
   common = map/wim/wim.c;
   common = map/wim/wimfile.c;
   common = map/wim/wimpatch.c;
-  efi = map/wimboot/efimain.c;
+  common = map/wimboot/main.c;
   efi = map/wimboot/efiboot.c;
   efi = map/wimboot/efifile.c;
   efi = map/wimboot/efiinstall.c;
   common = map/wimboot/vfat.c;
+  common = map/wimboot/grubfile.c;
 
   cflags = '-Wno-strict-aliasing -Wno-vla -fshort-wchar';
   cppflags = '-I$(srcdir)/map/include -I$(srcdir)/map/posix -I$(srcdir)/map/wim';
