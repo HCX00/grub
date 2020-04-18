@@ -2971,3 +2971,12 @@ module = {
   common = term/efi/mouse.c;
   enable = efi;
 };
+
+module = {
+  name = ventoy;
+  common = ventoy/ventoy.c;
+  common = ventoy/ventoy_linux.c;
+  common = ventoy/ventoy_windows.c;
+  common = ventoy/ventoy_plugin.c;
+  common = ventoy/ventoy_json.c;
+};
