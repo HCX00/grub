@@ -39,6 +39,7 @@
 #include <grub/time.h>
 #include <grub/ventoy.h>
 #include "ventoy_def.h"
+#include "ventoy_wrap.h"
 
 GRUB_MOD_LICENSE ("GPLv3+");
 
@@ -294,11 +295,6 @@ static grub_err_t ventoy_cmd_file_size(grub_extcmd_context_t ctxt, int argc, cha
     rc = 0;
     
     return rc;
-}
-
-static void *grub_efi_allocate_iso_buf (grub_size_t size)
-{
-    return grub_efi_allocate_any_pages (((grub_efi_uintn_t) size + ((1 << 12) - 1)) >> 12);
 }
 
 static grub_err_t ventoy_cmd_load_iso_to_mem(grub_extcmd_context_t ctxt, int argc, char **args)

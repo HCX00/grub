@@ -21,6 +21,12 @@
 #ifndef __VENTOY_DEF_H__
 #define __VENTOY_DEF_H__
 
+#include <grub/types.h>
+#include <grub/misc.h>
+#include <grub/command.h>
+#include <grub/extcmd.h>
+#include <grub/file.h>
+
 #define JSON_SUCCESS    0
 #define JSON_FAILED     1
 #define JSON_NOT_FOUND  2

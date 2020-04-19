@@ -2979,4 +2979,5 @@ module = {
   common = ventoy/ventoy_windows.c;
   common = ventoy/ventoy_plugin.c;
   common = ventoy/ventoy_json.c;
+  common = ventoy/ventoy_wrap.c;
 };
